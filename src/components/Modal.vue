@@ -75,40 +75,40 @@ export default {
       right: 0;
     }
   }
-}
-.person {
-  display: flex;
-  flex-direction: column;
-  &__img {
-    background: $accent;
-    border-radius: 50%;
-    color: $base-color;
-    line-height: 40px;
-    text-align: center;
-    height: 120px;
-    width: 120px;
-    margin-bottom: 16px;
-  }
-  b {
-    font-weight: bold;
-  }
-  span:not(:last-of-type) {
-    margin-bottom: 10px;
-  }
-  &__btn {
-    background-color: $light-gray;
-    border: 2px solid $gray;
-    color: $gray;
-    border-radius: 24px;
-    padding: 5px 15px;
-    text-transform: capitalize;
-    width: 100px;
-    margin-top: 40px;
-    &:hover,
-    &:active {
-      background: $gray;
-      color: $light-gray;
-      transition: background 0.1s ease-in;
+  .person {
+    display: flex;
+    flex-direction: column;
+    &__img {
+      background: $accent;
+      border-radius: 50%;
+      color: $base-color;
+      line-height: 40px;
+      text-align: center;
+      height: 120px;
+      width: 120px;
+      margin-bottom: 16px;
+    }
+    b {
+      font-weight: bold;
+    }
+    span:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    &__btn {
+      background-color: $light-gray;
+      border: 2px solid $gray;
+      color: $gray;
+      border-radius: 24px;
+      padding: 5px 15px;
+      text-transform: capitalize;
+      width: 100px;
+      margin-top: 40px;
+      &:hover,
+      &:active {
+        background: $gray;
+        color: $light-gray;
+        transition: background 0.1s ease-in;
+      }
     }
   }
 }

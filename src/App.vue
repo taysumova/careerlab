@@ -14,15 +14,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(person, index) in filteredData" :key="index">
-          <td>
+        <tr v-for="(person, index) in filteredData" :key="index" class="person">
+          <td class="person__img">
             <img :src="person.photoUrl" alt="Avatar" width="60" height="60" />
           </td>
           <td>{{ person.firstName }}</td>
           <td>{{ person.lastName }}</td>
           <td>{{ person.jobTitle }}</td>
           <td>
-            <button @click="setActive(person)">
+            <button class="person__btn" @click="setActive(person)">
               View candidate
             </button>
           </td>
@@ -91,6 +91,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   padding: 30px;
+  width: 100%;
+  height: 100%;
+  @media screen and (max-width: 520px) {
+    padding: 10px;
+  }
   &__title {
     font-size: 20px;
     font-weight: bold;
@@ -103,9 +108,50 @@ export default {
     th {
       font-weight: bold;
       padding-bottom: 20px;
+      text-align: left;
     }
     td {
       transition: all 12s ease-in;
+      vertical-align: middle;
+    }
+    .person {
+      &:not(:last-of-type) {
+        td {
+          padding-bottom: 10px;
+        }
+        td:not(:last-of-type) {
+          padding-right: 10px;
+        }
+      }
+      &__img {
+        width: 60px;
+        height: 60px;
+        img {
+          background: $accent;
+          border-radius: 50%;
+          color: $base-color;
+          line-height: 40px;
+          object-fit: cover;
+          text-align: center;
+          height: 60px;
+          width: 60px;
+        }
+      }
+      &__btn {
+        background-color: $accent;
+        border: 1px solid transparent;
+        color: $base-color;
+        border-radius: 24px;
+        padding: 10px 25px;
+        text-transform: capitalize;
+        &:hover,
+        &:active {
+          background: $base-color;
+          border: 1px solid $accent;
+          color: $accent;
+          transition: all 0.2s ease-in;
+        }
+      }
     }
   }
 }
@@ -113,5 +159,6 @@ export default {
   font-size: 16px;
   padding: 30px;
   color: $error;
+  text-align: center;
 }
 </style>
